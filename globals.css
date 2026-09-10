@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #000;
+  color: #fff;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.boot-stars {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 72%, #9ad 50%, transparent 51%),
+    radial-gradient(1px 1px at 67% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 81% 64%, #8cf 50%, transparent 51%),
+    radial-gradient(1px 1px at 44% 40%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 12%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 8% 88%, #6df 50%, transparent 51%),
+    radial-gradient(circle at 50% 42%, rgba(0, 80, 140, 0.35), transparent 55%);
+}
+
+.boot-brain {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(920px, 160vw);
+  height: min(920px, 160vw);
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(ellipse at 50% 58%, rgba(0, 220, 255, 0.18), transparent 42%),
+    radial-gradient(circle at 38% 42%, rgba(0, 180, 255, 0.55) 0 2px, transparent 3px),
+    radial-gradient(circle at 62% 38%, rgba(80, 230, 255, 0.7) 0 2px, transparent 3px),
+    radial-gradient(circle at 48% 52%, rgba(0, 210, 255, 0.45) 0 3px, transparent 4px),
+    radial-gradient(circle at 55% 62%, rgba(255, 60, 80, 0.45) 0 6px, transparent 8px),
+    radial-gradient(circle at 42% 64%, rgba(255, 40, 70, 0.35) 0 8px, transparent 10px);
+  filter: drop-shadow(0 0 28px rgba(0, 200, 255, 0.35));
+}
+
+.boot-brain::before {
+  content: '';
+  position: absolute;
+  inset: 18%;
+  border-radius: 46% 54% 48% 52%;
+  border: 2px solid rgba(80, 220, 255, 0.35);
+  box-shadow:
+    0 0 40px rgba(0, 200, 255, 0.25),
+    inset 0 0 60px rgba(0, 160, 255, 0.15);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 10px,
+      rgba(255, 40, 70, 0.55) 10px 12px,
+      transparent 12px 18px,
+      rgba(0, 220, 200, 0.45) 18px 20px
+    );
+  mask-image: radial-gradient(circle at 50% 48%, #000 36%, transparent 68%);
+  opacity: 0.55;
+}
+
+.boot-brain::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 42%;
+  height: 32%;
+  transform: translate(-50%, 0);
+  border: 2px solid rgba(0, 220, 255, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.2);
+}
+
+.boot-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22d3ee;
+  animation: bootPulse 1s ease-in-out infinite;
+}
+
+.boot-dot-delay {
+  animation-delay: 0.18s;
+}
+
+.boot-dot-delay-2 {
+  animation-delay: 0.36s;
+}
+
+@keyframes bootPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
